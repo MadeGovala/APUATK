@@ -7,17 +7,13 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-  <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.icon" item-left></ion-icon>
-      {{item.title}}
-      <div class="item-note" item-right>
-        {{item.note}}
-      </div>
-    </button>
-  </ion-list>
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
-  </div>
+<ion-content padding>
+<ion-grid>
+    <ion-row *ngFor="let trio of getTriples()">
+        <ion-col *ngFor="let item of trio">
+           <button ion-button >{{ item }}</button>
+        </ion-col>
+    </ion-row>
+</ion-grid>
+  
 </ion-content>

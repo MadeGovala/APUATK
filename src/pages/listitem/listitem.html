@@ -1,0 +1,26 @@
+
+
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title> Mengenal Angka Dengan Suara</ion-title>
+  </ion-toolbar>
+</ion-header>
+<br/><br/><br/><br/>
+
+<ion-card padding>
+   <ion-card-header>
+   
+  </ion-card-header>
+ <ion-scroll scrollY="true" >
+  <audio-track #audio *ngFor="let track of myTracks"  [track]="track" (onFinish)="onTrackFinished($event)">
+    <ion-item>  
+      <ion-thumbnail>
+        <img src="{{audio.art}}">
+        <audio-track-play dark [audioTrack]="audio"><ion-spinner></ion-spinner></audio-track-play>  
+      </ion-thumbnail>    
+    </ion-item>    
+  </audio-track>
+    </ion-scroll>   
+ </ion-card >
+  
